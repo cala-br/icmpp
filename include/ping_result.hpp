@@ -5,8 +5,7 @@
 #include "ping_packet.hpp"
 
 namespace icmp::ping {
-  class PingResult {
-  public:
+  struct PingResult {
     PingResult(PingPacket sent, PingPacket received):
       tripTimeMs(
         std::chrono::millisecondsSinceEpoch() - sent.timestamp

@@ -7,8 +7,6 @@
 
 namespace icmp::ping {
   struct PingPacket {
-    static thread_local inline uint16_t _seqNumber = 0;
-
     packet::IcmpHeader header;
     uint16_t identifier;
     uint16_t sequenceNumber;
@@ -17,6 +15,9 @@ namespace icmp::ping {
 
     static PingPacket echoRequest(uint16_t identifier);
     static PingPacket emptyEchoRequest();
+
+  private:
+    static thread_local inline uint16_t _seqNumber = 0;
   };
 }
 

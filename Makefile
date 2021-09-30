@@ -25,7 +25,7 @@ depend:
 
 run: _run cleanall
 _run: build
-	./bin/$(OUTFILE)
+	./$(OUTFILE)
 
 .PHONY: clean cleanall
 clean:
